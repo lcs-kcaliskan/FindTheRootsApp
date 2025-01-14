@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RootsCalculatorView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            navigationTitle("Find The Roots")
+            VStack {
+                
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
