@@ -4,63 +4,75 @@
 //
 //  Created by Ahmet Kaan Caliskan on 2025-01-14.
 //
-
 import SwiftUI
 
 struct RootsCalculatorView: View {
-    @State var currentnumber: Double = 1
+    // Stored properties
+    @State var currentNumberA: Double = 1
+    @State var currentNumberB: Double = 1
+    @State var currentNumberC: Double = 1
+
+    // Computed property for formatted value
+    var formattedNumberA: String {
+        currentNumberA.formatted(.number.precision(.fractionLength(1)))
+    }
+    var formattedNumberB: String {
+        currentNumberB.formatted(.number.precision(.fractionLength(1)))
+    }
+    var formattedNumberC: String {
+        currentNumberC.formatted(.number.precision(.fractionLength(1)))
+    }
+
     var body: some View {
-        NavigationStack{
-            VStack{
-                
+        NavigationStack {
+            VStack {
                 Image("QuadraticFormula")
                     .resizable()
                     .scaledToFit()
                 Image("StandardForm")
                     .resizable()
                     .scaledToFit()
-                HStack{
-                    Text("a:1.0")
+
+                HStack {
+                    Text("value of a: \(formattedNumberA)")
                         .padding()
-                        .font(Font.custom("Times New Roman",
-                                          size: 24.0,
-                                          relativeTo: .body))
-                    Text("b:-6.0")
+                        .font(Font.custom("Times New Roman", size: 24.0, relativeTo: .body))
+                    Text("value of b: \(formattedNumberB)")
                         .padding()
-                        .font(Font.custom("Times New Roman",
-                                          size: 24.0,
-                                          relativeTo: .body))
-                    Text("c:8.0")
-                        .font(Font.custom("Times New Roman",
-                                          size: 24.0,
-                                          relativeTo: .body))
+                        .font(Font.custom("Times New Roman", size: 24.0, relativeTo: .body))
+                    Text("value of c: \(formattedNumberC)")
+                        .font(Font.custom("Times New Roman", size: 24.0, relativeTo: .body))
                 }
-                VStack{
-                    
-                    HStack{
+
+                VStack {
+                    HStack {
                         Slider(
-                            value: $currentnumber,
+                            value: $currentNumberA,
                             in: 0...100,
-                            step: 1
+                            step: 0.1
                         )
                         Slider(
-                            value: $currentnumber,
+                            value: $currentNumberB,
                             in: 0...100,
-                            step: 1
+                            step: 0.1
                         )
                         Slider(
-                            value: $currentnumber,
+                            value: $currentNumberC,
                             in: 0...100,
-                            step: 1
+                            step: 0.1
                         )
                     }
-                    Text("x≈2.00 and x≈4.00")
+                    .padding()
+
+                    Text("x ≈ 2.00 and x ≈ 4.00")
+                        .font(Font.custom("Times New Roman", size: 20.0))
                 }
-                .navigationTitle("Find The Roots")
+                .padding()
+
+                Spacer()
             }
+            .navigationTitle("Find The Roots")
             .padding()
-            Spacer()
-            
         }
     }
 }
