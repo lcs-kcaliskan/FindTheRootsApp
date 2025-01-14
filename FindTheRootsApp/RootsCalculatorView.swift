@@ -11,8 +11,6 @@ struct RootsCalculatorView: View {
     @State var currentNumberA: Double = 1
     @State var currentNumberB: Double = 1
     @State var currentNumberC: Double = 1
-
-    // Computed property for formatted value
     var formattedNumberA: String {
         currentNumberA.formatted(.number.precision(.fractionLength(1)))
     }
@@ -21,6 +19,17 @@ struct RootsCalculatorView: View {
     }
     var formattedNumberC: String {
         currentNumberC.formatted(.number.precision(.fractionLength(1)))
+    }
+    
+    //computed properties
+    var result : String {
+        let discriminant = currentNumberB * currentNumberB - 4 * currentNumberA * currentNumberC
+        //check for negatives
+        if discriminant < 0 {
+            return "No real roots"
+        } else{
+            let x1 =( currentNumberB * -1 - discriminant)
+        }
     }
 
     var body: some View {
