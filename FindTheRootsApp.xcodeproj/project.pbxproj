@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E442C7E32D36C34F0068A4BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E442C7DD2D36C34F0068A4BE /* Preview Assets.xcassets */; };
+		E442C7E42D36C34F0068A4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E442C7DF2D36C34F0068A4BE /* Assets.xcassets */; };
+		E442C7E52D36C34F0068A4BE /* RootsCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442C7E02D36C34F0068A4BE /* RootsCalculatorView.swift */; };
+		E442C7E62D36C34F0068A4BE /* FindTheRootsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442C7E12D36C34F0068A4BE /* FindTheRootsAppApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E442C7CC2D36C3310068A4BE /* FindTheRootsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheRootsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E442C7DD2D36C34F0068A4BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E442C7DF2D36C34F0068A4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E442C7E02D36C34F0068A4BE /* RootsCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootsCalculatorView.swift; sourceTree = "<group>"; };
+		E442C7E12D36C34F0068A4BE /* FindTheRootsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTheRootsAppApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E442C7CE2D36C3310068A4BE /* FindTheRootsApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FindTheRootsApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E442C7C92D36C3310068A4BE /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		E442C7C32D36C3310068A4BE = {
 			isa = PBXGroup;
 			children = (
-				E442C7CE2D36C3310068A4BE /* FindTheRootsApp */,
+				E442C7E22D36C34F0068A4BE /* FindTheRootsApp */,
 				E442C7CD2D36C3310068A4BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,33 @@
 				E442C7CC2D36C3310068A4BE /* FindTheRootsApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E442C7DE2D36C34F0068A4BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E442C7DD2D36C34F0068A4BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E442C7E22D36C34F0068A4BE /* FindTheRootsApp */ = {
+			isa = PBXGroup;
+			children = (
+				E442C7E72D36C3610068A4BE /* Views */,
+				E442C7DE2D36C34F0068A4BE /* Preview Content */,
+				E442C7DF2D36C34F0068A4BE /* Assets.xcassets */,
+				E442C7E02D36C34F0068A4BE /* RootsCalculatorView.swift */,
+				E442C7E12D36C34F0068A4BE /* FindTheRootsAppApp.swift */,
+			);
+			path = FindTheRootsApp;
+			sourceTree = "<group>";
+		};
+		E442C7E72D36C3610068A4BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +89,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				E442C7CE2D36C3310068A4BE /* FindTheRootsApp */,
 			);
 			name = FindTheRootsApp;
 			packageProductDependencies = (
@@ -109,6 +136,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E442C7E32D36C34F0068A4BE /* Preview Assets.xcassets in Resources */,
+				E442C7E42D36C34F0068A4BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E442C7E52D36C34F0068A4BE /* RootsCalculatorView.swift in Sources */,
+				E442C7E62D36C34F0068A4BE /* FindTheRootsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
