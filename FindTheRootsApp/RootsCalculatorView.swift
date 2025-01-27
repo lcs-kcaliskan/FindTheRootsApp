@@ -7,10 +7,12 @@
 import SwiftUI
 
 struct RootsCalculatorView: View {
-    // Stored properties
     @State var currentNumberA: Double = 1
     @State var currentNumberB: Double = 1
     @State var currentNumberC: Double = 1
+    
+    @State var priorResults: [Result] = []
+    
     var formattedNumberA: String {
         currentNumberA.formatted(.number.precision(.fractionLength(1)))
     }
@@ -21,67 +23,55 @@ struct RootsCalculatorView: View {
         currentNumberC.formatted(.number.precision(.fractionLength(1)))
     }
     
-    //computed properties
-    var result : String {
+    var roots: String {
         let discriminant = currentNumberB * currentNumberB - 4 * currentNumberA * currentNumberC
-        //check for negatives
         if discriminant < 0 {
             return "No real roots"
-        } else{
-            let x1 =( currentNumberB * -1 - discriminant)
+        } else {
+            let x1 = (currentNumberB * -1 - discriminant.squareRoot()) / (2 * currentNumberA)
+            let x2 = (currentNumberB * -1 + discriminant.squareRoot()) / (2 * currentNumberA)
+            return "x ≈ \(x1.formatted(.number.precision(.fractionLength(2)))) and x ≈ \(x2.formatted(.number.precision(.fractionLength(2))))"
         }
     }
-
+    
     var body: some View {
         NavigationStack {
             VStack {
-                Image("QuadraticFormula")
-                    .resizable()
-                    .scaledToFit()
-                Image("StandardForm")
-                    .resizable()
-                    .scaledToFit()
-
+                Image("QuadraticFormula").resizable().scaledToFit()
+                Image("StandardForm").resizable().scaledToFit()
+                
                 HStack {
                     Text("value of a: \(formattedNumberA)")
-                        .padding()
-                        .font(Font.custom("Times New Roman", size: 24.0, relativeTo: .body))
                     Text("value of b: \(formattedNumberB)")
-                        .padding()
-                        .font(Font.custom("Times New Roman", size: 24.0, relativeTo: .body))
                     Text("value of c: \(formattedNumberC)")
-                        .font(Font.custom("Times New Roman", size: 24.0, relativeTo: .body))
                 }
-
-                VStack {
-                    HStack {
-                        Slider(
-                            value: $currentNumberA,
-                            in: 0...100,
-                            step: 0.1
-                        )
-                        Slider(
-                            value: $currentNumberB,
-                            in: 0...100,
-                            step: 0.1
-                        )
-                        Slider(
-                            value: $currentNumberC,
-                            in: 0...100,
-                            step: 0.1
-                        )
-                    }
-                    .padding()
-
-                    Text("x ≈ 2.00 and x ≈ 4.00")
-                        .font(Font.custom("Times New Roman", size: 20.0))
-                }
+                .font(.title2)
                 .padding()
-
-                Spacer()
+                
+                HStack {
+                    Slider(value: $currentNumberA, in: 0...100, step: 0.1)
+                    Slider(value: $currentNumberB, in: 0...100, step: 0.1)
+                    Slider(value: $currentNumberC, in: 0...100, step: 0.1)
+                }
+                
+                Text(roots).font(.title3).padding()
+                
+                Button("Save Result") {
+                    let latestResult = Result(a: currentNumberA,
+                                              b: currentNumberB,
+                                              c: currentNumberC,
+                                              roots: roots)
+                    priorResults.append(latestResult)
+                }
+                .buttonStyle(.bordered)
+                .padding()
+                
+                Text("History").font(.headline).padding(.top)
+                List(priorResults.reversed()) { currentResult in
+                    ResultView(somePriorResult: currentResult)
+                }
             }
             .navigationTitle("Find The Roots")
-            .padding()
         }
     }
 }

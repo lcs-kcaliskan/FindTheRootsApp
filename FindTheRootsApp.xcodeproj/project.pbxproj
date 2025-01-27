@@ -11,6 +11,8 @@
 		E442C7E42D36C34F0068A4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E442C7DF2D36C34F0068A4BE /* Assets.xcassets */; };
 		E442C7E52D36C34F0068A4BE /* RootsCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442C7E02D36C34F0068A4BE /* RootsCalculatorView.swift */; };
 		E442C7E62D36C34F0068A4BE /* FindTheRootsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442C7E12D36C34F0068A4BE /* FindTheRootsAppApp.swift */; };
+		E48C7CE62D3D7D4800016E23 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C7CE52D3D7D4800016E23 /* ResultView.swift */; };
+		E4F22CFD2D375AD400FD99F8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F22CFC2D375ACD00FD99F8 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E442C7DF2D36C34F0068A4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E442C7E02D36C34F0068A4BE /* RootsCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootsCalculatorView.swift; sourceTree = "<group>"; };
 		E442C7E12D36C34F0068A4BE /* FindTheRootsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTheRootsAppApp.swift; sourceTree = "<group>"; };
+		E48C7CE52D3D7D4800016E23 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E4F22CFC2D375ACD00FD99F8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		E442C7E22D36C34F0068A4BE /* FindTheRootsApp */ = {
 			isa = PBXGroup;
 			children = (
+				E4F22CFB2D375AC200FD99F8 /* Model */,
 				E442C7E72D36C3610068A4BE /* Views */,
 				E442C7DE2D36C34F0068A4BE /* Preview Content */,
 				E442C7DF2D36C34F0068A4BE /* Assets.xcassets */,
@@ -71,8 +76,17 @@
 		E442C7E72D36C3610068A4BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E48C7CE52D3D7D4800016E23 /* ResultView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E4F22CFB2D375AC200FD99F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4F22CFC2D375ACD00FD99F8 /* Result.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F22CFD2D375AD400FD99F8 /* Result.swift in Sources */,
 				E442C7E52D36C34F0068A4BE /* RootsCalculatorView.swift in Sources */,
+				E48C7CE62D3D7D4800016E23 /* ResultView.swift in Sources */,
 				E442C7E62D36C34F0068A4BE /* FindTheRootsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
